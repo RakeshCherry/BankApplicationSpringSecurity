@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.springsecurity</groupId>
-	<artifactId>springsecurity6above</artifactId>
+	<artifactId>section1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springsecurity6above</name>
+	<name>section1</name>
 	<description>Learnig SpringSecurity 6 and also updated depricated methods, which will be deleting in upcomming SpringSecurity7 </description>
 	<url/>
 	<licenses>
