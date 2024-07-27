@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "21a48e16-b402-4bc5-ba7a-3e335121cf58",
+		"name": "SpringSecurity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30669124"
+	},
+	"item": [
+		{
+			"name": "Section1",
+			"item": [
+				{
+					"name": "welcome",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "/wecome",
+							"path": [
+								"wecome"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Section2",
+			"item": [
+				{
+					"name": "contact",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "/contact",
+							"path": [
+								"contact"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "myBalance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "/myBalance",
+							"path": [
+								"myBalance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "myCards",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "/myCards",
+							"path": [
+								"myCards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "myLoans",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "/myLoans",
+							"path": [
+								"myLoans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "notices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "/notices",
+							"path": [
+								"notices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "myAccount",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "/myAccount",
+							"path": [
+								"myAccount"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.request.url.protocol=\"http\";\r",
+					"pm.request.url.host=\"localhost\";\r",
+					"pm.request.url.port=\"8080\";"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080"
+		}
+	]
+}
