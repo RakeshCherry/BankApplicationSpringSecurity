@@ -21,8 +21,11 @@ public class ProjectSecurityConfig {
                 .requestMatchers("/myAccount", "/myBalance", "/myCards", "/myLoans").authenticated()
                 .requestMatchers("/notices", "/contact", "/error ").permitAll()
         );
-        http.formLogin(withDefaults());
-        http.httpBasic(withDefaults());
+
+//        the below code disables formlogin and httpBasic and also gives 403 error
+//        http.formLogin(httpSecurityFormLoginConfigurer -> );
+        http.formLogin(flc -> flc.disable());
+        http.httpBasic(hbc -> hbc.disable());
         return http.build();
     }
     }
