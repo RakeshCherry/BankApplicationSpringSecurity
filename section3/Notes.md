@@ -23,5 +23,21 @@ if we not use encoder it will be saved as plane text in the brower memory or sto
     * not accepts anyinput
     * checks whether the password is compromised or not returns the non-null CompromisedPasswordDecistion 
     * @NonNull annotaion CompromisedPasswordDecision check(String password);
+    * CompromisedPasswordChecker method which is introduced SpringSecurity 6.3 and it also ok to use in production Application
  
  # HaveIBeenPwnedRestApiPasswordChecker
+
+
+ # internal flow of SpringSecurity 
+        User entered credentials --1--> springSecurityfilters --2--> Authentication --3--> AuthenticationManager --4--> AuthenticationProviders --5--> UserDetailsManager/Service --6--> PasswordEncoded
+        User entered credentials <--10-- SpringSecurityfilters <--9-- SecurityContext <--8-- AuthenticationManager <--7-- AuthenticationProviders <--6--------------------------------------------
+
+ # USER MANAGEMENT 
+    * UserDetailsSrvice(Interface) ----> UserDetailsManager(Interface) --> a. InMemoryUserDetailsManager, b. jdbcUserDetailsManager, c. LdapUserDetailsManager, also can build custom securityManager
+
+ # UserDetails
+    * All the above interfaces and classes uses an interface UserDetails & its implementation which privides core user information
+    * Inside the UserDetailsManager/Service we use Use UserDetails interface and its implement class is User to represent 
+
+ # UsernamePasswordAuthenticationToken 
+    * most commonaly used class
