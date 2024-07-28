@@ -10,6 +10,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -37,12 +40,24 @@ public class ProjectSecurityConfig {
         return http.build();
     }
 
-//    to configure userDetailsService below is the code
+    //    to configure userDetailsService below is the code
     @Bean
-    public UserDetailsService userDetailsService(){
-        UserDetails user = User.withUsername("user").password("{noop}12345").authorities("read").build();
-        UserDetails admin = User.withUsername("admin").password("{noop}54321").authorities("admin").build();
+    public UserDetailsService userDetailsService() {
+        UserDetails user = User.withUsername("user")
+                .password("{noop}12345")
+                .authorities("read")
+                .build();
+        UserDetails admin = User.withUsername("admin")
+//                the below password is encrypted Hash code of BCrypt and used prefix {bcrypt} its good practice to use prefix
+                .password("{bcrypt}$2a$12$UNlLvqOMkWvCKTwltPKk1uOoznL9rCpTc8RK8loLCisULkWA.oJvq")
+                .authorities("admin")
+                .build();
         return new InMemoryUserDetailsManager(user, admin);
     }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
+}
 
