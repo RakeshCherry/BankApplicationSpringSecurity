@@ -3,4 +3,6 @@ Using SpringSecurity6 creating Bank Application where user and admin can access 
 
 
 ## Section 4 
-  in this created mysql container using DOCKER 
+  * In this created mysql container using DOCKER
+  * added script.sql which will be using in client of sqlecron to create backapplication database tables username and password
+  
