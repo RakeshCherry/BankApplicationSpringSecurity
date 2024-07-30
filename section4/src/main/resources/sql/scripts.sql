@@ -7,3 +7,16 @@ INSERT IGNORE INTO `authorities` VALUES ('user', 'read');
 
 INSERT IGNORE INTO `users` VALUES ('admin', '{bcrypt}$2a$12$mNWjGgxh3ep8zOcoCsgl1.i6cC.a0MkfusKiQZoYobJvm3i16pXY6', '1');
 INSERT IGNORE INTO `authorities` VALUES ('admin', 'admin');
+
+
+CREATE TABLE `customer` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `email` varchar(45) NOT NULL,
+    `pwd` varchar(200) NOT NULL,
+    `role` varchar(45) NOT NULL,
+    PRIMARY KEY(`id`)
+);
+
+
+INSERT INTO `customer` (`email`, `pwd`, `role`) VALUES('happy@example.com', '{noop}user_@12345', 'read');
+INSERT INTO `customer` (`email`, `pwd`, `role`) VALUES('admin@example.com', '{bcrypt}$2a$12$mNWjGgxh3ep8zOcoCsgl1.i6cC.a0MkfusKiQZoYobJvm3i16pXY6', 'admin');
