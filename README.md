@@ -5,4 +5,6 @@ Using SpringSecurity6 creating Bank Application where user and admin can access 
 ## Section 4 
   * In this created mysql container using DOCKER
   * added script.sql which will be using in client of sqlecron to create backapplication database tables username and password
+  * created new custom UserDetailsService class as 'BankBackendUserDetailsService'
+  * created REST API UserController so register role base new user without having any security restriction
   
